@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="561" width="350" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your answer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHY-CM-fo8">
-                                                <rect key="frame" x="0.0" y="0.0" width="198.33333333333334" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="174.33333333333334" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="FQV-4T-pc4"/>
                                                 </constraints>
@@ -43,8 +43,8 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-AY-xmN">
-                                                <rect key="frame" x="248.33333333333329" y="0.0" width="101.66666666666666" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-AY-xmN">
+                                                <rect key="frame" x="224.33333333333334" y="0.0" width="125.66666666666666" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="K30-j3-SGw"/>
                                                 </constraints>
@@ -121,6 +121,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sliderLabel" destination="XsA-xY-UWa" id="5iM-uC-BPk"/>
                         <outlet property="valueLabel" destination="eJP-AY-xmN" id="vN5-W5-ZVb"/>
                     </connections>
                 </viewController>
