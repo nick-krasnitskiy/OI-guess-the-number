@@ -8,12 +8,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var valueLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      
     }
 
 
+    @IBAction func sliderChanged(_ sender: UISlider) {
+    }
+    
+    @IBAction func checkAnswerTapped(_ sender: UIButton) {
+    }
+    
+    
 }
 
