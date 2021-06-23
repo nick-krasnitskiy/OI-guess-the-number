@@ -20,7 +20,11 @@ class ViewController: UIViewController {
         sliderLabel.value = 50
     }
 
-
+    func guessTheNumber() -> Int {
+        randomNumber = Int.random(in: 0...100)
+        return randomNumber
+    }
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         valueLabel.text = String(format: "%.f", sender.value)
     }
