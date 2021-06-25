@@ -23,7 +23,7 @@
                                 <rect key="frame" x="20" y="64" width="350" height="726"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUESS THE NUMBER!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3Ro-19-PhW">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="541"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="481"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="B59-B9-p6j"/>
                                         </constraints>
@@ -32,10 +32,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ae4-IR-C4q">
-                                        <rect key="frame" x="0.0" y="561" width="350" height="40"/>
+                                        <rect key="frame" x="0.0" y="501" width="350" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your answer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHY-CM-fo8">
-                                                <rect key="frame" x="0.0" y="0.0" width="174.33333333333334" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="150.33333333333334" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="FQV-4T-pc4"/>
                                                 </constraints>
@@ -44,12 +44,35 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-AY-xmN">
-                                                <rect key="frame" x="224.33333333333334" y="0.0" width="125.66666666666666" height="40"/>
+                                                <rect key="frame" x="200.33333333333337" y="0.0" width="149.66666666666663" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="K30-j3-SGw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <color key="textColor" red="0.3770591915" green="0.39615231750000002" blue="0.60026544329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mee-hV-2KL">
+                                        <rect key="frame" x="0.0" y="561" width="350" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFz-NG-TlB">
+                                                <rect key="frame" x="0.0" y="0.0" width="253.33333333333334" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Utr-9l-Y5D"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edl-eD-Yew">
+                                                <rect key="frame" x="273.33333333333331" y="0.0" width="76.666666666666686" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Y7d-ap-Dr9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -121,6 +144,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="numberOfStepsLabel" destination="Edl-eD-Yew" id="vS4-dD-2wC"/>
                         <outlet property="sliderLabel" destination="XsA-xY-UWa" id="5iM-uC-BPk"/>
                         <outlet property="valueLabel" destination="eJP-AY-xmN" id="vN5-W5-ZVb"/>
                     </connections>

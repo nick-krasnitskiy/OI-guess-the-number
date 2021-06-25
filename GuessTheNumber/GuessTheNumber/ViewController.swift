@@ -11,9 +11,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var sliderLabel: UISlider!
+    @IBOutlet weak var numberOfStepsLabel: UILabel!
     
     var randomNumber: Int = 0
     var answer: Int = 0
+    var stepsNumber: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
         sliderLabel.value = 50
         valueLabel.text = ""
         guessTheNumber()
+        updateSteps(action: nil)
     }
     
     func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
@@ -37,16 +40,23 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func updateSteps(action: UIAlertAction!) {
+        numberOfStepsLabel.text = String(stepsNumber)
+        stepsNumber += 1
+    }
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         valueLabel.text = String(format: "%.f", sender.value)
         answer = Int(round(sender.value))
     }
     
     @IBAction func checkAnswerTapped(_ sender: UIButton) {
+        
+        
         if answer < randomNumber {
-            alertGeenrate(alertTitle: "Wrong", alertMessage: "Your answer \(answer) is less than the guessed number.", actionTitle: "Try again", handler: nil)
+            alertGeenrate(alertTitle: "Wrong", alertMessage: "Your answer \(answer) is less than the guessed number.", actionTitle: "Try again", handler: updateSteps)
         } else if answer > randomNumber {
-            alertGeenrate(alertTitle: "Wrong", alertMessage: "Your answer \(answer) is more than the guessed number.", actionTitle: "Try again", handler: nil)
+            alertGeenrate(alertTitle: "Wrong", alertMessage: "Your answer \(answer) is more than the guessed number.", actionTitle: "Try again", handler: updateSteps)
         } else {
             alertGeenrate(alertTitle: "Right", alertMessage: "Your have guessed the number. Your answer \(answer) equals the guessed number. Сongratulations!", actionTitle: "OK", handler: updateState)
         }
