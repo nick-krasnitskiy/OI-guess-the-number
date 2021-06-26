@@ -144,8 +144,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="answerLabel" destination="jHY-CM-fo8" id="cF8-o2-2wb"/>
+                        <outlet property="checkButton" destination="O1j-uB-sgd" id="37E-WL-DTg"/>
+                        <outlet property="mainLabel" destination="3Ro-19-PhW" id="m9q-9d-lHj"/>
                         <outlet property="numberOfStepsLabel" destination="Edl-eD-Yew" id="vS4-dD-2wC"/>
                         <outlet property="sliderLabel" destination="XsA-xY-UWa" id="5iM-uC-BPk"/>
+                        <outlet property="stepLabel" destination="jFz-NG-TlB" id="uqo-6q-2YM"/>
                         <outlet property="valueLabel" destination="eJP-AY-xmN" id="vN5-W5-ZVb"/>
                     </connections>
                 </viewController>

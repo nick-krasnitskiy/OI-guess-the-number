@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  GuessTheNumber
+
+  Created by Nick Krasnitskiy on 26.06.2021.
+  
+*/
+
+// Labels
+GUESS_THE_NUMBER = "GUESS THE NUMBER!";
+ANSWER = "Your answer:";
+STEP = "Number of steps:";
+ 
+// Button
+CHECK = "CHECK";
+ 
+// Alerts
+ALERT_TITLE_ONE = "Wrong";
+ALERT_TITLE_TWO = "Right";
+ 
+ALERT_MESSAGE_ONE = "Your answer %@ is less than the guessed number.";
+ALERT_MESSAGE_TWO = "Your answer %@ is more than the guessed number.";
+ALERT_MESSAGE_THREE = "Your have guessed the number. Your answer %@ equals the guessed number. Сongratulations!";
+ 
+ALERT_ACTION_TITLE_ONE = "Try again";
+ALERT_ACTION_TITLE_TWO = "OK";

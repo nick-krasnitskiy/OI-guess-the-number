@@ -1,0 +1,26 @@
+/*
+  Localizable.strings
+  GuessTheNumber
+
+  Created by Nick Krasnitskiy on 25.06.2021.
+  
+*/
+
+// Labels
+GUESS_THE_NUMBER = "УГАДАЙ ЧИСЛО!";
+ANSWER = "Твой ответ:";
+STEP = "Количество шагов:";
+
+// Button
+CHECK = "ПРОВЕРИТЬ";
+
+// Alerts
+ALERT_TITLE_ONE = "Не верно";
+ALERT_TITLE_TWO = "Верно";
+
+ALERT_MESSAGE_ONE = "Твой ответ \(answer) меньше загаданного числа.";
+ALERT_MESSAGE_TWO = "Твой ответ \(answer) больше загаданного числа.";
+ALERT_MESSAGE_THREE = "Ты угадал. Твой ответ \(answer) равен загаданному числу. Поздравляем!";
+
+ALERT_ACTION_TITLE_ONE = "Попробуй еще";
+ALERT_ACTION_TITLE_TWO = "ОК";
