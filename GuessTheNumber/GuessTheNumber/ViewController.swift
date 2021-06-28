@@ -16,10 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var numberOfStepsLabel: UILabel!
     @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var leftValueLabel: UILabel!
+    @IBOutlet weak var rightValueLabel: UILabel!
     
     var randomNumber: Int = 0
     var answer: Int = 0
     var stepsNumber: Int = 0
+    var leftRangeBorder: Int = 0
+    var rightRangeBorder: Int = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +32,20 @@ class ViewController: UIViewController {
     }
     
     func guessTheNumber() {
-        randomNumber = Int.random(in: 0...100)
+        randomNumber = Int.random(in: leftRangeBorder...rightRangeBorder)
         print(randomNumber)
     }
     
     func updateState(action: UIAlertAction!) {
-        sliderLabel.value = 50
-        valueLabel.text = ""
-        guessTheNumber()
         stepsNumber = 0
+        guessTheNumber()
+        sliderLabel.value = Float((rightRangeBorder - leftRangeBorder)/2)
+        valueLabel.text = ""
         numberOfStepsLabel.text = String(stepsNumber)
+        leftValueLabel.text = String(leftRangeBorder)
+        rightValueLabel.text = String(rightRangeBorder)
+        sliderLabel.minimumValue = Float(leftRangeBorder)
+        sliderLabel.maximumValue = Float(rightRangeBorder)
     }
     
     func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {

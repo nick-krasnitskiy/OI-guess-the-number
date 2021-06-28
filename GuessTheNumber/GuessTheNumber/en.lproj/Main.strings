@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "GUESS THE NUMBER!"; ObjectID = "3Ro-19-PhW"; */
+"3Ro-19-PhW.text" = "GUESS THE NUMBER!";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "8zg-c4-kQn"; */
+"8zg-c4-kQn.title" = "Home";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "MtH-9g-GhT"; */
+"MtH-9g-GhT.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "CHECK"; ObjectID = "O1j-uB-sgd"; */
+"O1j-uB-sgd.normalTitle" = "CHECK";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "Sl4-Mm-rUn"; */
+"Sl4-Mm-rUn.text" = "100";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "gXe-zi-S9d"; */
+"gXe-zi-S9d.text" = "0";
+
+/* Class = "UILabel"; text = "Number of steps:"; ObjectID = "jFz-NG-TlB"; */
+"jFz-NG-TlB.text" = "Number of steps:";
+
+/* Class = "UILabel"; text = "Your answer:"; ObjectID = "jHY-CM-fo8"; */
+"jHY-CM-fo8.text" = "Your answer:";
