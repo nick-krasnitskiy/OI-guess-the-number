@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ViewControllerDelegate {
-    func update(fromBorder: String, toBorder: String)
+    func update(savedFromBorder: String, savedToBorder: String)
 }
 
 class ViewController: UIViewController, ViewControllerDelegate {
@@ -76,9 +76,9 @@ class ViewController: UIViewController, ViewControllerDelegate {
                 destination.delegate = self
     }
     
-    func update(fromBorder: String, toBorder: String) {
-        leftRangeBorder = Int(fromBorder) ?? 0
-        rightRangeBorder = Int(toBorder) ?? 100
+    func update(savedFromBorder: String, savedToBorder: String) {
+        leftRangeBorder = Int(savedFromBorder) ?? 0
+        rightRangeBorder = Int(savedToBorder) ?? 100
         updateState(action: nil)
     }
     
