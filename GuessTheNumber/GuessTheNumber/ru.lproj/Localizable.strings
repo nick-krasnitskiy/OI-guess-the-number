@@ -24,3 +24,13 @@ ALERT_MESSAGE_THREE = "Ты угадал. Твой ответ %@ равен за
  
 ALERT_ACTION_TITLE_ONE = "Попробуй еще";
 ALERT_ACTION_TITLE_TWO = "ОК";
+
+// Second screen label
+SC_LABEL = "Диапазон генерации числа";
+
+// Second screen placeholders
+SC_PH_ONE = "От";
+SC_PH_TWO = "До";
+
+// Second screen button
+SC_ADD_BUTTON = "ДОБАВИТЬ";

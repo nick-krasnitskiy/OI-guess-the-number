@@ -24,3 +24,13 @@ ALERT_MESSAGE_THREE = "Your have guessed the number. Your answer %@ equals the g
  
 ALERT_ACTION_TITLE_ONE = "Try again";
 ALERT_ACTION_TITLE_TWO = "OK";
+
+// Second screen label
+SC_LABEL = "Range of random number generation";
+
+// Second screen placeholders
+SC_PH_ONE = "From";
+SC_PH_TWO = "To";
+
+// Second screen button
+SC_ADD_BUTTON = "ADD";

@@ -182,7 +182,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="t2T-hA-Cto">
                                 <rect key="frame" x="20" y="194" width="388" height="176"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="From" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRC-AX-nQi">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRC-AX-nQi">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="mG6-ql-8K5"/>
@@ -190,7 +190,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEB-2i-4Bg">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEB-2i-4Bg">
                                         <rect key="frame" x="0.0" y="68" width="388" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="SAA-bK-nQE"/>
@@ -238,7 +238,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="9EE-Fl-7et"/>
                     <connections>
+                        <outlet property="addButtonLabel" destination="wSJ-ht-2Sj" id="wmp-uW-dkY"/>
                         <outlet property="fromTextField" destination="dRC-AX-nQi" id="Ak9-tp-thu"/>
+                        <outlet property="mainLabel" destination="JEe-RS-yPi" id="O0Q-gi-dvZ"/>
                         <outlet property="toTextField" destination="eEB-2i-4Bg" id="gQd-YV-3eq"/>
                     </connections>
                 </viewController>
