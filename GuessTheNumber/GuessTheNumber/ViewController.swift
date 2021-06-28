@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol ViewControllerDelegate {
+    func update(fromBorder: String, toBorder: String)
+}
+
+class ViewController: UIViewController, ViewControllerDelegate {
     
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
@@ -67,6 +71,18 @@ class ViewController: UIViewController {
         checkButton.setTitle(NSLocalizedString("CHECK", comment:"CHECK"), for: .normal)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? SecondViewController else { return }
+                destination.delegate = self
+    }
+    
+    func update(fromBorder: String, toBorder: String) {
+        leftRangeBorder = Int(fromBorder) ?? 0
+        rightRangeBorder = Int(toBorder) ?? 100
+        updateState(action: nil)
+    }
+    
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         valueLabel.text = String(format: "%.f", sender.value)
         answer = Int(round(sender.value))
@@ -95,4 +111,6 @@ class ViewController: UIViewController {
         
     }
 }
+
+
 

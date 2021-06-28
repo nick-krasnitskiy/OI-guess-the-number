@@ -8,10 +8,18 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    var delegate: ViewControllerDelegate?
+    
+    @IBOutlet weak var fromTextField: UITextField!
+    @IBOutlet weak var toTextField: UITextField!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
-
+    
+    @IBAction func addRangePressed(_ sender: UIButton) {
+        guard let fromBorder = fromTextField.text, let toBorder = toTextField.text else {return}
+        delegate?.update(fromBorder: fromBorder, toBorder: toBorder)
+    }
 }

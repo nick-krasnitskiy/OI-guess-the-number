@@ -148,7 +148,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Settings" image="gearshape" catalog="system" id="MtH-9g-GhT">
                             <color key="tintColor" red="0.3770591915" green="0.39615231750000002" blue="0.60026544329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="1VL-fN-c57" kind="show" id="8Cv-sz-NVc"/>
+                                <segue destination="1VL-fN-c57" kind="show" identifier="" id="8Cv-sz-NVc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,7 +188,7 @@
                                             <constraint firstAttribute="height" constant="40" id="mG6-ql-8K5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEB-2i-4Bg">
                                         <rect key="frame" x="0.0" y="68" width="388" height="40"/>
@@ -196,7 +196,7 @@
                                             <constraint firstAttribute="height" constant="40" id="SAA-bK-nQE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSJ-ht-2Sj">
                                         <rect key="frame" x="0.0" y="136" width="388" height="40"/>
@@ -208,6 +208,9 @@
                                         <state key="normal" title="ADD">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addRangePressed:" destination="1VL-fN-c57" eventType="touchUpInside" id="txX-dc-vnf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -234,6 +237,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="9EE-Fl-7et"/>
+                    <connections>
+                        <outlet property="fromTextField" destination="dRC-AX-nQi" id="Ak9-tp-thu"/>
+                        <outlet property="toTextField" destination="eEB-2i-4Bg" id="gQd-YV-3eq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vy5-ER-vi0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
