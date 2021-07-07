@@ -7,21 +7,21 @@
 
 import UIKit
 
-protocol ViewControllerDelegate {
+protocol ViewControllerDelegate: class {
     func update(savedFromBorder: String, savedToBorder: String)
 }
 
 class ViewController: UIViewController, ViewControllerDelegate {
     
-    @IBOutlet weak var mainLabel: UILabel!
-    @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var sliderLabel: UISlider!
-    @IBOutlet weak var stepLabel: UILabel!
-    @IBOutlet weak var numberOfStepsLabel: UILabel!
-    @IBOutlet weak var checkButton: UIButton!
-    @IBOutlet weak var leftValueLabel: UILabel!
-    @IBOutlet weak var rightValueLabel: UILabel!
+    @IBOutlet private weak var mainLabel: UILabel!
+    @IBOutlet private weak var answerLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var sliderLabel: UISlider!
+    @IBOutlet private weak var stepLabel: UILabel!
+    @IBOutlet private weak var numberOfStepsLabel: UILabel!
+    @IBOutlet private weak var checkButton: UIButton!
+    @IBOutlet private weak var leftValueLabel: UILabel!
+    @IBOutlet private weak var rightValueLabel: UILabel!
     
     var randomNumber: Int = 0
     var answer: Int = 0

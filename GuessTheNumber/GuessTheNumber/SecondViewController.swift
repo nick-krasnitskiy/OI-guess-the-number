@@ -9,7 +9,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var delegate: ViewControllerDelegate?
+    weak var delegate: ViewControllerDelegate?
 
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var fromTextField: UITextField!
