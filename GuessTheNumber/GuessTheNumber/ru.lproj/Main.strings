@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "GUESS THE NUMBER!"; ObjectID = "3Ro-19-PhW"; */
+"3Ro-19-PhW.text" = "УГАДАЙ ЧИСЛО!";
+
+/* Class = "UIButton"; normalTitle = "CHECK"; ObjectID = "O1j-uB-sgd"; */
+"O1j-uB-sgd.normalTitle" = "ПРОВЕРИТЬ";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "Sl4-Mm-rUn"; */
+"Sl4-Mm-rUn.text" = "100";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "gXe-zi-S9d"; */
+"gXe-zi-S9d.text" = "0";
+
+/* Class = "UILabel"; text = "Number of steps:"; ObjectID = "jFz-NG-TlB"; */
+"jFz-NG-TlB.text" = "Количество шагов:";
+
+/* Class = "UILabel"; text = "Your answer:"; ObjectID = "jHY-CM-fo8"; */
+"jHY-CM-fo8.text" = "Твой ответ:";

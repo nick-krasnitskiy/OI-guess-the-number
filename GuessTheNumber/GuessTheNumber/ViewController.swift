@@ -7,28 +7,49 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol ViewControllerDelegate: class {
+    func update(savedFromBorder: String, savedToBorder: String)
+}
+
+class ViewController: UIViewController, ViewControllerDelegate {
     
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var sliderLabel: UISlider!
+    @IBOutlet private weak var mainLabel: UILabel!
+    @IBOutlet private weak var answerLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var sliderLabel: UISlider!
+    @IBOutlet private weak var stepLabel: UILabel!
+    @IBOutlet private weak var numberOfStepsLabel: UILabel!
+    @IBOutlet private weak var checkButton: UIButton!
+    @IBOutlet private weak var leftValueLabel: UILabel!
+    @IBOutlet private weak var rightValueLabel: UILabel!
     
     var randomNumber: Int = 0
     var answer: Int = 0
+    var stepsNumber: Int = 0
+    var leftRangeBorder: Int = 0
+    var rightRangeBorder: Int = 100
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
         updateState(action: nil)
     }
     
     func guessTheNumber() {
-        randomNumber = Int.random(in: 0...100)
+        randomNumber = Int.random(in: leftRangeBorder...rightRangeBorder)
         print(randomNumber)
     }
     
     func updateState(action: UIAlertAction!) {
-        sliderLabel.value = 50
-        valueLabel.text = ""
+        stepsNumber = 0
         guessTheNumber()
+        sliderLabel.value = Float((rightRangeBorder - leftRangeBorder)/2)
+        valueLabel.text = ""
+        numberOfStepsLabel.text = String(stepsNumber)
+        leftValueLabel.text = String(leftRangeBorder)
+        rightValueLabel.text = String(rightRangeBorder)
+        sliderLabel.minimumValue = Float(leftRangeBorder)
+        sliderLabel.maximumValue = Float(rightRangeBorder)
     }
     
     func alertGeenrate(alertTitle: String, alertMessage: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
@@ -37,19 +58,59 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func updateSteps(action: UIAlertAction!) {
+        stepsNumber += 1
+        numberOfStepsLabel.text = String(stepsNumber)
+        
+    }
+    
+    func updateUI() {
+        mainLabel.text = NSLocalizedString("GUESS_THE_NUMBER", comment:"GUESS THE NUMBER!")
+        answerLabel.text = NSLocalizedString("ANSWER", comment:"Your answer:")
+        stepLabel.text = NSLocalizedString("STEP", comment:"Number of steps:")
+        checkButton.setTitle(NSLocalizedString("CHECK", comment:"CHECK"), for: .normal)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? SecondViewController else { return }
+                destination.delegate = self
+    }
+    
+    func update(savedFromBorder: String, savedToBorder: String) {
+        leftRangeBorder = Int(savedFromBorder) ?? 0
+        rightRangeBorder = Int(savedToBorder) ?? 100
+        updateState(action: nil)
+    }
+    
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         valueLabel.text = String(format: "%.f", sender.value)
         answer = Int(round(sender.value))
     }
     
     @IBAction func checkAnswerTapped(_ sender: UIButton) {
+        let alertTitleOne = NSLocalizedString("ALERT_TITLE_ONE", comment:"Wrong")
+        let alertTitleTwo = NSLocalizedString("ALERT_TITLE_TWO", comment:"Right")
+        
+        let alertMessageOne = String(format: NSLocalizedString("ALERT_MESSAGE_ONE", comment: ""), "\(answer)")
+        let alertMessageTwo = String(format: NSLocalizedString("ALERT_MESSAGE_TWO", comment: ""), "\(answer)")
+        let alertMessageThree = String(format: NSLocalizedString("ALERT_MESSAGE_THREE", comment: ""), "\(answer)")
+        
+        let alertActionTitleOne = NSLocalizedString("ALERT_ACTION_TITLE_ONE", comment:"Try again")
+        let alertActionTitleTwo = NSLocalizedString("ALERT_ACTION_TITLE_TWO", comment:"OK")
+        
         if answer < randomNumber {
-            alertGeenrate(alertTitle: "Wrong", alertMessage: "Your answer \(answer) is less than the guessed number.", actionTitle: "Try again", handler: nil)
+            alertGeenrate(alertTitle: alertTitleOne, alertMessage: alertMessageOne, actionTitle: alertActionTitleOne, handler: updateSteps)
         } else if answer > randomNumber {
-            alertGeenrate(alertTitle: "Wrong", alertMessage: "Your answer \(answer) is more than the guessed number.", actionTitle: "Try again", handler: nil)
+            alertGeenrate(alertTitle: alertTitleOne, alertMessage: alertMessageTwo, actionTitle: alertActionTitleOne, handler: updateSteps)
         } else {
-            alertGeenrate(alertTitle: "Right", alertMessage: "Your have guessed the number. Your answer \(answer) equals the guessed number. Сongratulations!", actionTitle: "OK", handler: updateState)
+            alertGeenrate(alertTitle: alertTitleTwo, alertMessage: alertMessageThree, actionTitle: alertActionTitleTwo, handler: updateState)
+            updateSteps(action: nil)
+            
         }
+        
     }
 }
+
+
 
